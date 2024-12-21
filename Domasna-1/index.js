@@ -73,6 +73,11 @@ const meseci = [
 
 console.log(meseci)
 
+const filterMeseci = meseci.filter((nekojMesec)=>{
+  return nekojMesec.mesec.length === 4
+
+})
+console.log(filterMeseci)
 var mesecodTastatura = "Juni"
 var najdenMesec = meseci.find((m) => m.mesec ===  mesecodTastatura)
 
