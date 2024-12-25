@@ -40,7 +40,6 @@ console.log(findStudent)
 
 
 
-
 function pravoagolnikPlostina(a,b){
 
   return a * b
@@ -78,6 +77,7 @@ const filterMeseci = meseci.filter((nekojMesec)=>{
 
 })
 console.log(filterMeseci)
+
 var mesecodTastatura = "Juni"
 var najdenMesec = meseci.find((m) => m.mesec ===  mesecodTastatura)
 
@@ -86,3 +86,6 @@ console.log(`${najdenMesec.mesec} , ${najdenMesec.znak}`)
 }else{
   console.log("Gresen Mesec")
 }
+
+
+//
