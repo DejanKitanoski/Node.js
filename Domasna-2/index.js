@@ -33,23 +33,25 @@ const studenti = [
     
   ];
   // 1. Сите студенти од Скопје чие име завршува на а и имаат просек над 7, подредени по име (растечки).
-  var studentsfilter = studenti.filter(srudent => srudent.prosek >=7 && srudent.ime.startsWith("A") && srudent.grad ==="Skopje").sort((a,b)=> a.prosek - b.prosek)
+  var studentsfilter = studenti.filter(srudent => srudent.prosek >=7 && srudent.ime.endsWith("a") && srudent.grad ==="Skopje").sort()
  console.log(studentsfilter)
 //(!startsWithA || srudent.ime.startsWith("A"))
 
-
+console.log(`====================11111111111111111111======================`)
 
 // 2. Сите студенти кои имаат просек над 9 и не се од Скопје, подредени по просек опаѓачки.
 
 var studentProsekGolem = studenti.filter((student)=> student.prosek >= 9 && student.grad !== "Skopje").sort((a,b)=> b.prosek - a.prosek)
 console.log(studentProsekGolem)
-
+console.log(`================2222222222222222222222==================================`)
 // 3. Првите 3 студенти кои имаат имиња од 5 карактери, подредени по просек.
 //Prasanje dali ovde treba da gi najdam prvo studentite pa posle da gi izvadam privite ili samo d anajdam 3 studenti.
 
 const filterPetStudenti = studenti.filter((prviStudenti)=> prviStudenti.ime.length === 5  ).sort((a,b)=> a.prosek - b.prosek ).slice(0.3)
+
 console.log(filterPetStudenti)
 
+console.log(`==============3333333333333333333333333=================================`)
 // 4. Вкупен просек на студенти кои се од Куманово
 const studentiOhrid = studenti.filter((ohridStudent)=> ohridStudent.grad === "Ohrid")
 console.log(studentiOhrid)
@@ -61,8 +63,8 @@ console.log(`Vkupniot prosek na studentie od Ohrid e : ${ckupenProsekOhrid.toFix
   // const studentiSKopje = studentsfilter(studenti,false)
   // console.log(studentiSKopje)]
 
-
-
+  console.log(`======================44444444444444444============================`)
+  console.log(`==============================================================`)
   // 5. Просек на просеците од градовите Скопје и Охрид
   
   const prosekSkopjeVevcani = studenti.filter((sturentiVevcaniSkopje)=> sturentiVevcaniSkopje.grad === "Vevcani" || sturentiVevcaniSkopje.grad === "Skopje")
@@ -72,28 +74,61 @@ const celosenProsekVevacniSkopje = prosekSkopjeVevcani.reduce((suma,prosek)=>{
 },0)
 const presmetajCelosenProsekSopjeVev = celosenProsekVevacniSkopje / prosekSkopjeVevcani.length
 console.log(`Prosekot Skopje Vevcani e ${presmetajCelosenProsekSopjeVev}`)
+console.log(`====================555555555555555555555555=====================`)
 // 6. Да се додаде уште еден студент со име Горан, просек 7.3 и град Делчево
 
 
 studenti.push({ime:"Горан",prosek:7.3,grad:"Delcevo"})
 console.log(studenti)
+console.log(`================6666666666666666666666=====================`)
 // 7. Да се избрише првиот студент во студенти
 studenti.shift()
 console.log(studenti)
+console.log(`============77777777777777777777777777777===========`)
 // 8. Да се креира нов array каде што студентите од Охрид и Куманово каде што оценките со просек се за 1 поголем(Динамички)
 
-// const studentiArray = studenti.filter((studentiProsekPlus)=> studentiProsekPlus.grad === "Ohrid" || studentiProsekPlus.grad === "Veles")
+// const studentiArray = studenti.filter((studentiProsekPlus)=> studentiProsekPlus.grad === "Ohrid" || studentiProsekPlus.grad === "Veles").map(student => ({
+//   ...student,
+//   prosek: (student.prosek + 1,10.5), 
+// }));
 
-// console.log(studentiArray)
-// const prosekZgolemenNaStudenti = studentiArray
-
-studenti.forEach((student)=>{
-  if(student.grad  === "Ohrid" || student.grad === "Veles"){
-    student.prosek++;
+const pojmaNemamKako = studenti.map(student => {
+  if (student.grad === "Veles" || student.grad === "Ohrid") {
+    return{
+      ...student, 
+      prosek: student.prosek + 1, 
+     };
+    
+  }
+  return { ...student, 
+  prosek: (student.prosek - 2).toFixed(2),
   }
 })
-const zoglemenProsekFor = [...studenti]
-console.log(zoglemenProsekFor)
+
+console.log(pojmaNemamKako)
+// const prosekZgolemenNaStudenti = studentiArray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// studenti.forEach((student)=>{
+//   if(student.grad  === "Ohrid" || student.grad === "Veles"){
+//     student.prosek++;
+//   }
+// })
+// const zoglemenProsekFor = [...studenti]
+// console.log(zoglemenProsekFor)
 
 // Object.entries() 
 
