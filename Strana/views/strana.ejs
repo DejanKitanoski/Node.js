@@ -6,38 +6,32 @@
     <title>Grocery Store</title>
     <link rel="stylesheet" href="global.css">
     <script src="script.js"></script>
-
 </head>
 <body>
     <h1>Grocery Store</h1>
     <div class="container">
-    
-    
-    <div id="grocery-list">
-        <% groceryItems.forEach(category => { %>
-            <h2><%= category.category %></h2>
-            <div class="category">
-              
-                <% category.items.forEach(item => { %>
-                    
-                    <div class="item">
-                        <h3 class="price"><%= item.name %> </h3>
-                        <h3 class="price">$<%= item.price %></h3>
-                        <img   src="<%= item.picture %>" alt="<%= item.name %>" style="width: 100px;">
-                        <button class="cartBtn" onclick="addToCart('<%= item.price %>,<%= item.name %>')">SHOP NOW</button>
-                
+        <div id="grocery-list">
+            <% groceryItems.forEach(category => { %>
+                <h2><%= category.category %></h2>
+                <div class="category">
+                    <% category.items.forEach(item => { %>
+                        <div class="item">
+                            <h3 class="price"><%= item.name %></h3>
+                            <h3 class="price">$<%= item.price %></h3>
+                            <img src="<%= item.picture %>" alt="<%= item.name %>" style="width: 100px;">
+                            <button class="cartBtn" onclick="addToCart('<%= item.name %>', '<%= item.price %>', '<%= item.picture %>')">SHOP NOW</button>
+                        </div>
+                    <% }); %>
                 </div>
-                <% }); %>
+            <% }); %>
+        </div>
+        
+        <div class="card">
+            <h2>Shopping Cart</h2>
+            <div id="cart-items">
+                <p>Your cart is empty.</p>
             </div>
-        <% }); %>
-    </div>
-    <div class="card" id="cart">
-        <div class="cart" id="cart">
-            <div class="title"></div>
-            <div id="title"></div>
+        </div>
         </div>
     </div>
-
-</div>
 </body>
-</html>
