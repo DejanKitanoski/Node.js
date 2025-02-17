@@ -82,12 +82,24 @@ studenti.shift()
 console.log(studenti)
 // 8. Да се креира нов array каде што студентите од Охрид и Куманово каде што оценките со просек се за 1 поголем(Динамички)
 
-const studentiArray = studenti.filter((studentiProsekPlus)=> studentiProsekPlus.grad === "Ohrid" || studentiProsekPlus.grad === "Veles")
+// const studentiArray = studenti.filter((studentiProsekPlus)=> studentiProsekPlus.grad === "Ohrid" || studentiProsekPlus.grad === "Veles")
 
-console.log(studentiArray)
+// console.log(studentiArray)
+// const prosekZgolemenNaStudenti = studentiArray
 
-const plusProsekStudenti = studentiArray.map((studentNzKAkoo)=>{[...studentNzKAkoo,
-
-]
+studenti.forEach((student)=>{
+  if(student.grad  === "Ohrid" || student.grad === "Veles"){
+    student.prosek++;
+  }
 })
+const zoglemenProsekFor = [...studenti]
+console.log(zoglemenProsekFor)
+
+// Object.entries() 
+
+// prosekZgolemenNaStudenti.map((studentVelesOhrid)=> studentVelesOhrid.prosek + 1)
+// const plusProsekStudenti = studentiArray.map((studentNzKAkoo)=>[{...studentNzKAkoo,
+//   studentNzKAkoo.pros + 1
+// }])
+// console.log(prosekZgolemenNaStudenti)
 /// sakam da iskorista spred operator zos znam deka gi kopirat na sive od nizava i mojt so nego da im so dodelit vrednost akko so jabolkoto samo nz kako
