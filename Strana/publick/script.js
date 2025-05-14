@@ -14,8 +14,7 @@ function addToCart(name, price, picture) {
 
 function updateCart() {
     const cartContainer = document.getElementById("cart-items");
-    cartContainer.innerHTML = ""; // Clear the cart before updating
-
+    cartContainer.innerHTML = ""; 
     if (cart.length === 0) {
         cartContainer.innerHTML = "<p>Your cart is empty.</p>";
         return;

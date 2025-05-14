@@ -8,7 +8,10 @@
     <script src="script.js"></script>
 </head>
 <body>
+    <div>
     <h1>Grocery Store</h1>
+</div>
+    <hr class="hr-top">
     <div class="container">
         <div id="grocery-list">
             <% groceryItems.forEach(category => { %>
@@ -27,9 +30,10 @@
         </div>
         
         <div class="card">
-            <h2>Shopping Cart</h2>
+            <h2 class="card-head">Shopping Cart</h2>
+            <hr >
             <div id="cart-items">
-                <p>Your cart is empty.</p>
+                <p class="card-empty">Your cart is empty.</p>
             </div>
         </div>
         </div>

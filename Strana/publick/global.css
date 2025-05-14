@@ -11,19 +11,47 @@
     margin: 0;
     background-color: #f4f4f4;
 }
+.hr-top{
+  border: 5px solid green;
+}
+.card-head{
+  margin-left: 5px;
+}
+.cart-item{
+  width: 270px;
+  height: 50px;
+  border: none;
+  border-radius: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  background-color: rgb(29, 29, 29);
+  box-shadow: 0 20px 30px -7px rgba(27, 27, 27, 0.219);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+  
+}
 .container {
     display: flex;
-    justify-content: space-between; /* Creates space between the elements */
-    gap: 20px; /* Optional: Adds space between the divs */
+    justify-content: space-between; 
+    gap: 20px; 
 }
 
-/* Grocery list and cart should both take up their own space */
+.card-empty{
+  text-align: center;
+}
 #grocery-list {
-    flex: 2; /* Takes up more space */
+    flex: 2; 
 }
 
-.Cart {
-    flex: 1; /* Takes up less space */
+.card {
+    flex: 1; 
+    border: 1px solid black;
 }
 
 
