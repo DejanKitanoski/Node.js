@@ -1,0 +1,125 @@
+.login{
+  
+    background-image:url(https://gsacom.com/content/uploads/2023/09/FWA_survey_2023.jpeg);
+    background-repeat: no-repeat;
+   
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+.card{
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    height:300px ;
+}
+.kocka{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    
+}
+.naslov{
+    font-size: 15px;
+}
+.login-img{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+    
+}
+/* BUTTON */
+.btn {
+    font-size: 17px;
+    background: transparent;
+    border: none;
+    padding: 1em 1.5em;
+    color: #000000;
+    text-transform: uppercase;
+    position: relative;
+    transition: 0.5s ease;
+    cursor: pointer;
+  }
+  
+  .btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #00d3fd;
+    transition: 0.5s ease;
+  }
+  
+  .btn:hover {
+    color: #1e1e2b;
+    transition-delay: 0.5s;
+  }
+  
+  .btn:hover::before {
+    width: 100%;
+  }
+  
+  .btn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background-color: #00d3fd;
+    transition: 0.4s ease;
+    z-index: -1;
+  }
+  
+  .btn:hover::after {
+    height: 100%;
+    transition-delay: 0.4s;
+    color: aliceblue;
+  }
+  /* BUTTON */
+  .slika{
+    width: 100px;
+    height: 100px;
+  }
+  /* Forum View */
+  .container-post{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0px;
+    
+  }
+  .post {
+    width: 100%;
+    height: 250px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+    transition: transform 0.3s ease-in-out;
+    border: 1px solid black;
+
+}
+
+  .post-titel-container{
+    display: flex;
+    gap: 10px;
+  }
+  .paragraf-con{
+    width: 100%;
+  }

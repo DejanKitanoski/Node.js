@@ -39,14 +39,13 @@ message:err.message
 }
 exports.updateStudent = async (req,res) =>{
     try{
-const studentID =  req.params.id
-const updatedStudent = await student.findByIdAndUpdate(studentID,req.body)
-res.status(201).json({
-    status:'success',
-   
-    data:{
-        updateStudent: updatedStudent,
-    },
+    const studentID =  req.params.id
+    const updatedStudent = await student.findByIdAndUpdate(studentID,req.body)
+        res.status(201).json({
+            status:'success',
+            data:{
+            updateStudent: updatedStudent,
+          },
 })
     }catch(err){
 res.status(500).json({
@@ -57,37 +56,38 @@ message:err.message
 }
 
 exports.addCreateStudent = async (req,res) => {
-    try{
-const studdent = await student.create(req.body)
+ try{
+    console.log(req.body)
+    
+    const studdent = await student.create(req.body)
+    console.log(studdent)
+    res.status(201).json({
 
-res.status(201).json({
-    status:'success',
-   
-    data:{
-        newStudent: studdent
-    },
-})
-
-
-    }catch(err){
+        status:'success',
+        data:{
+            newStudent: studdent
+        },
+      })
+    } catch(err){
         res.status(500).json({
             status:'fail',
             message:err.message
-            })
+         })
     }
+    
 }
+
 exports.deleteStudent = async(req,res) => {
     try{
-const Studentid = req.params.id
-const deleteStudent = await student.findByIdAndDelete(Studentid)
-res.status(201).json({
+    const Studentid = req.params.id
+    const deleteStudent = await student.findByIdAndDelete(Studentid)
+    res.status(201).json({
     status:'success',
    
     data:{
         deleteStudent: deleteStudent,
     },
 })
-
     }catch(err){
         res.status(500).json({
             status:'fail',
@@ -95,3 +95,20 @@ res.status(201).json({
             })
     }
 }
+
+exports.createPost = async (req, res) => {
+    try {
+    const newPost = await Post.create(req.body); 
+    res.status(201).json({
+    status: "success",
+    data: {
+          post: newPost,
+        },
+      });
+    } catch (err) {
+      res.status(500).json({
+        status: "fail",
+        message: err.message,
+      });
+    }
+  };

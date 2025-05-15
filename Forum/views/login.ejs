@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="global.css">
+    <title><%= title %></title>
+  </head>
+  <body class="login">
+    <div class="card">
+      <img  class="login-img" src="/image/Artboard-1.png" alt="logo">
+      
+      <h1 class="naslov">Login</h1>
+      <form class="form">
+        <label  for="email" class="email" aria-placeholder="Email"></label>
+        <br>
+        <input class="kocka" type="email" id="email" class="email" name="email" required placeholder="Email" />
+        <br>
+        <label   for="password" class="password" ></label>
+        <br>
+        <input
+        placeholder="Password"
+        class="kocka"
+          type="password"
+          id="password"
+          class="password"
+          name="password"
+          required
+        />
+        <br>
+        <br>
+        <button class="btn" type="submit" class="login-button">Login</button>
+      </form>
+    </div>
+  </body>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.min.js"
+    integrity="sha512-v8+bPcpk4Sj7CKB11+gK/FnsbgQ15jTwZamnBf/xDmiQDcgOIYufBo6Acu1y30vrk8gg5su4x0CG3zfPaq5Fcg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script type="text/javascript" src="/js/login.js"></script>
+</html>

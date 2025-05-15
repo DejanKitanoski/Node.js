@@ -1,12 +1,11 @@
 const mongoose = require("mongoose");
 const studentiShema = new mongoose.Schema({
-  Ime: {
+  ime: {
     type: String,
     required: [true, "Mora da ima ime"],
     trim: true,
     minlength: 1,
     maxlength: [20, "Imeto e pre dolgo"],
-    unique: [true, "Vnesi validno ime"],
   },
   age: {
     type: Number,
@@ -18,6 +17,17 @@ const studentiShema = new mongoose.Schema({
     type: String,
     enum: ["male", "female"],
     required: [true, "Mora da ima pol"],
+  },
+  grade: {
+    type: Number,
+    require: [true, "Mora da vnesete ocena"],
+    minlength: 1,
+    maxlength: [10, "Nemoze da imate pogolem prosek od 10 "],
+  },
+  city: {
+    type: String,
+    require:[true,"Vnesete mesto na ziveenje"]
+    
   },
 });
 const Student = mongoose.model("Student", studentiShema);

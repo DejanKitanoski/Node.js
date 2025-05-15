@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./global.css" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1>All Posts</h1>
+    <div class="container-post">
+      <% if (posts.length === 0) { %>
+      <p>No Posts</p>
+      <% } else { %> <% posts.forEach(post => { %>
+
+      <div class="post">
+        <div class="post-titel-container">
+          <div class="title-img">
+            <a href="./forumView/<%= post._id %>">
+              <h2 class="Post-title"><%= post.title %></h2>
+            </a>
+
+            <img class="slika" src="/image/<%= post.slika %>" alt="picture" />
+          </div>
+          <div class="paragraf-con">
+          <p><%= post.content %></p>
+          </div>
+        </div>
+      </div>
+
+      <% }); %> <% } %>
+    </div>
+    <form action="/createPost" method="post">
+      <label for="title">Title:</label>
+      <input type="" name="title" id="title" />
+      <label for="content">content:</label>
+      <textarea class="text" type="text" name="content" id="content"></textarea>
+      <button type="submit" name="createPost">POST</button>
+    </form>
+  </body>
+</html>
